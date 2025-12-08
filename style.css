@@ -1,72 +1,170 @@
-       * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-        
-        .container {
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
-        
-        .icon {
-            font-size: 48px;
-            margin-bottom: 30px;
-            color: #666;
-        }
-        
-        h1 {
-            font-size: 32px;
-            font-weight: 300;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-        
-        .highlight {
-            font-weight: 600;
-            color: #000;
-        }
-        
-        .divider {
-            width: 60px;
-            height: 1px;
-            background-color: #ddd;
-            margin: 30px auto;
-        }
-        
-        .contact {
-            color: #666;
-            font-size: 16px;
-            margin-top: 40px;
-        }
-        
-        .email {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        
-        .email:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 24px;
-            }
-            
-            .icon {
-                font-size: 36px;
-            }
-        }
+/* 1. Global Styles and Background Gradient */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+    /* Black background */
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. Main Container (The Card) */
+.container {
+    background-color: rgba(49, 48, 48, 0.9);
+    /* Semi-transparent white */
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 10px rgba(255, 255, 255, 0.3);
+    /* Multi-layer shadow */
+    text-align: center;
+    max-width: 90%;
+    width: 500px;
+    position: relative;
+    /* Needed for button positioning */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Subtle border */
+}
+
+/* 3. Icon Styling and Animation */
+.icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 20px;
+    animation: bounce 1.5s infinite ease-in-out;
+    text-shadow: 2px 2px #ffc107;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 4. Text Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #e95420;
+    /* Pop of color */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+/* 5. The Playful Button */
+#mischievous-button {
+    background-color: #ff6f61;
+    /* Soft Red */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    position: absolute;
+    /* Key for moving on hover */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    /* Prevent text wrap when moving */
+    z-index: 10;
+}
+
+/* Set initial position for the button container */
+.button-wrapper {
+    height: 60px;
+    /* Space for the button */
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* 6. Social Media Footer */
+.social-media {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.social-media a {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ff6f61;
+}
+
+/* 7. AOS Animation Styles */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+@keyframes aos-fade-up {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+[data-aos="fade-up"] {
+    animation-name: aos-fade-up;
+}
+
+/* 8. Font Awesome Icons */
+.fa-brands {
+    display: inline-block;
+    font: var(--fa-font-brands);
+    font-size: 1.8rem;
+}
+
+/* 9. Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .icon {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
