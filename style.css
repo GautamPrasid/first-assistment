@@ -143,11 +143,12 @@ p {
     animation-name: aos-fade-up;
 }
 
-/* 8. Font Awesome Icons */
-.fa-brands {
+/* 8. Font Awesome Icons (support both `fa-brands` and `fab`) */
+.fa-brands,
+.fab {
     display: inline-block;
-    font: var(--fa-font-brands);
     font-size: 1.8rem;
+    color: inherit;
 }
 
 /* 9. Responsive Adjustments */
